@@ -1,0 +1,47 @@
+{
+    "name": "iback",
+    "version": "1.0.0",
+    "description": "Notifies you when your Internet speed is back to normal",
+    "main": "./lib/index.js",
+    "bin": "./lib/cli.js",
+    "scripts": {
+        "build": "babel src -d lib",
+        "watch": "npm run build -- -w",
+        "precommit": "pretty-quick --staged"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ZuraJanaiNazayDa/iback.git"
+    },
+    "keywords": [
+        "cli",
+        "speed",
+        "speed-test",
+        "internet",
+        "bandwidth",
+        "check"
+    ],
+    "author": "Yazan Alkheder <ZuraJanaiNazayDa@gmail.com> (http://ZuraJanaiNazayDa.github.io/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ZuraJanaiNazayDa/iback/issues"
+    },
+    "homepage": "https://github.com/ZuraJanaiNazayDa/iback#readme",
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "log-symbols": "^2.2.0",
+        "log-update": "^2.3.0",
+        "meow": "^5.0.0",
+        "node-notifier": "^5.2.1",
+        "ora": "^2.1.0",
+        "speedtest-net": "^1.4.2"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-0": "^6.24.1",
+        "husky": "^0.14.3",
+        "prettier": "1.13.5",
+        "pretty-quick": "^1.6.0"
+    }
+}
