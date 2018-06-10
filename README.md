@@ -18,24 +18,24 @@ iback
 
     --help Display this help
     --min-download=<speed>, -d=<speed> Set the minimum download speed in Mbps to pass the test
-      default: ${minDownloadDefault}
+      default: 0.01
     --min-upload=<speed>, -u=<speed> Set the minimum upload speed in Mbps to pass the test
-      default: ${minUploadDefault}
+      default: 0.01
     --max-ping=<ms>, -p=<ms> Set the maximum ping to pass the test
-      default: ${maxPingDefault}
+      default: 5000
     --silent, -s  Don't send notifications
     --stiky-notifications, -sn Make all notifications wait
     --no-sounds, -ns Stop the notification sounds
     --log-errors, -le Log errors
     --error-retry-time=<seconds>, -ert=<seconds> Set the time to wait before retrying when an error occurs
-      default: ${errorRetryTimeDefault}
+      default: 60
     --no-error-retry, -ner Don't retry when an error occurs
     --log-failures, -lf Log failures (Slow Internet)
     --failure-retry-time=<seconds>, -frt=<seconds> Set the time to wait before retrying when the Internet is slow
-      default: ${failureRetryTimeDefault}
+      default: 0
     --no-failure-retry, -nfr Don't retry when the Internet is slow
     --max-time=<ms>, -mt Set the maximum length of a single test run (upload or download)
-      default: ${maxTimeDefault}
+      default: 5000
 
 ### Examples
 
