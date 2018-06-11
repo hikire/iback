@@ -33,10 +33,12 @@ const cli = meow(
           --silent, -s  Don't send notifications
           --stiky-notifications, -sn Make all notifications wait
           --no-sounds, -ns Stop the notification sounds
+          --notify-on-errors, -ne Show a notification when an error occurs
           --log-errors, -le Log errors
           --error-retry-time=<seconds>, -ert=<seconds> Set the time to wait before retrying when an error occurs
             default: ${errorRetryTimeDefault}
           --no-error-retry, -ner Don't retry when an error occurs
+          --notify-on-failures, -nf Show a notification when the test result is slow Internet
           --log-failures, -lf Log failures (Slow Internet)
           --failure-retry-time=<seconds>, -frt=<seconds> Set the time to wait before retrying when the Internet is slow
             default: ${failureRetryTimeDefault}
@@ -75,6 +77,10 @@ const cli = meow(
                 type: "boolean",
                 alias: "ns"
             },
+            "notify-on-errors": {
+                type: "boolean",
+                alias: "noe"
+            },
             "log-errors": {
                 type: "boolean",
                 alias: "le"
@@ -87,6 +93,10 @@ const cli = meow(
             "no-error-retry": {
                 type: "boolean",
                 alias: "ner"
+            },
+            "notify-on-failures": {
+                type: "boolean",
+                alias: "nof"
             },
             "log-failures": {
                 type: "boolean",
@@ -114,8 +124,18 @@ const sounds = !cli.flags.noSounds;
 const { silent, stikyNotifications } = cli.flags;
 
 const notifySuccess = getNotify(true, sounds, silent);
-const notifyFailure = getNotify(stikyNotifications, sounds, silent);
-const notifyError = getNotify(stikyNotifications, sounds, silent);
+
+const notifyFailure = getNotify(
+    stikyNotifications,
+    sounds,
+    silent || !cli.flags.notifyOnFailures
+);
+
+const notifyError = getNotify(
+    stikyNotifications,
+    sounds,
+    silent || !cli.flags.notifyOnErrors
+);
 
 const errorRetryTime =
     parseInt(cli.flags.errorRetryTime) || errorRetryTimeDefault;
