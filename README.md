@@ -168,6 +168,6 @@ Fired just before starting the test again.
 iback.on("retrying", () => console.log("retrying now"));
 ```
 
-## TroubleShooting
+## Troubleshooting
 
-If the notifications doesn't work please see [node-notifier](https://github.com/mikaelbr/node-notifier).
+If the notifications don't work please see [node-notifier](https://github.com/mikaelbr/node-notifier).
