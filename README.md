@@ -2,6 +2,10 @@
 
 This CLI tool notifies you when your internet connection speed is back to normal, so you can kick back instead of watching Chrome's dinosaur while clicking F5.
 
+![iback - failed and retrying](https://user-images.githubusercontent.com/39221661/41237516-549ee650-6d9c-11e8-851a-f2fd5883a7b7.png)
+![iback - success](https://user-images.githubusercontent.com/39221661/41237716-e3c62c44-6d9c-11e8-9e13-2c0740b1503f.png)
+
+
 ## Installation
 
 ```sh
