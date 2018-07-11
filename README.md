@@ -75,7 +75,7 @@ Iback receives an options object can be like this:
 const options = {
     test: { maxTime: 5000 }, // original speedtest-net settings, see (https://github.com/ddsol/speedtest.net)
     retryOnError: 60, // time to retry after error, or false to disable autoretry on errors
-    retryOnFailure: 0, // time to retry after failure, or false to disable autoretry on errors
+    retryOnFailure: 0, // time to retry after failure, or false to disable autoretry on failures
     minDownload: 0.01, // minimum accepted download speed in Mbps
     minUpload: 0.01, // minimum accepted upload speed in Mbps
     maxPing: 5000, // maximum accepted ping speed in ms
