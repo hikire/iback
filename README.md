@@ -63,6 +63,8 @@ const iback = new Iback({ minDownload: 3 });
 iback.on("iback", sendSMS);
 
 iback.on("error", logError);
+
+iback.start();
 ```
 
 ### Options
