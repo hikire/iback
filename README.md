@@ -20,6 +20,7 @@ iback
 
 ### Options
 
+      Options
     --help Display this help
     --min-download=<speed>, -d=<speed> Set the minimum download speed in Mbps to pass the test
       default: 0.01
@@ -30,10 +31,12 @@ iback
     --silent, -s  Don't send notifications
     --stiky-notifications, -sn Make all notifications wait
     --no-sounds, -ns Stop the notification sounds
+    --notify-on-errors, -ne Show a notification when an error occurs
     --log-errors, -le Log errors
     --error-retry-time=<seconds>, -ert=<seconds> Set the time to wait before retrying when an error occurs
       default: 60
     --no-error-retry, -ner Don't retry when an error occurs
+    --notify-on-failures, -nf Show a notification when the test result is slow Internet
     --log-failures, -lf Log failures (Slow Internet)
     --failure-retry-time=<seconds>, -frt=<seconds> Set the time to wait before retrying when the Internet is slow
       default: 0
@@ -176,4 +179,4 @@ iback.on("retrying", () => console.log("retrying now"));
 
 ## Troubleshooting
 
-If the notifications don't work please see [node-notifier](https://github.com/mikaelbr/node-notifier).
+If notifications don't work please see [node-notifier](https://github.com/mikaelbr/node-notifier).
